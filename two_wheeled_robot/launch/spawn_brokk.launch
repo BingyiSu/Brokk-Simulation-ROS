@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+
+	<include file="$(find two_wheeled_robot)/launch/spawn_xacro.launch">
+
+		<arg name="x" value="0.0"/>
+		<arg name="y" value="0.0"/>
+		<arg name="z" value="0.0"/>
+		<arg name="urdf_robot_file" value="$(find two_wheeled_robot)/urdf/brokk.xacro"/>
+		<arg name="robot_name" value="brokk"/>
+
+	</include>
+		
+  <include file="$(find two_wheeled_robot)/launch/control.launch">
+    <arg name="robot_name" value="brokk"/>
+    <arg name="config_file" value="brokk_control_config.yaml"/>
+  </include>
+
+</launch>

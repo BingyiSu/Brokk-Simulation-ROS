@@ -1,0 +1,31 @@
+brokk:
+# controls the two wheels based on individual motor
+  # Publish all joint states -----------------------------------
+  
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  right_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 0.01}
+  left_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 0.01}
+    
+
+    
+  # gazebo_ros_control:
+  #   pid_gains:
+  #     rear_right_wheel_joint:
+  #       p: 100.0
+  #       i: 0.5
+  #       d: 0.0
+  #     rear_left_wheel_joint:
+  #       p: 100.0
+  #       i: 0.5
+  #       d: 0.0
+    
+    
+
